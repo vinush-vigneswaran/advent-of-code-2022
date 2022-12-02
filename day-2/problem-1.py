@@ -14,7 +14,6 @@ get_scores ={
 
 scores = []
 
-# create list of totals for each elf
 for line in lines:
     play = line.rstrip('\n')
 

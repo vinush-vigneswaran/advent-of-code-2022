@@ -40,7 +40,6 @@ def user_play(play):
 
 scores = []
 
-# create list of totals for each elf
 for line in lines:
     play = line.rstrip('\n')
     score = get_scores[play[2]] + get_scores[user_play(play)]
