@@ -1,0 +1,25 @@
+file = "data.txt"
+read_file = open(file, 'r')
+
+lines = read_file.readlines()
+
+def convert_to_priority(char:str):
+    if char.isupper():
+        return ord(char) - 38
+    else:
+        return ord(char) - 96
+
+sum_of_priorities = 0
+num = 3
+
+for i in range(num-1, len(lines), num):
+
+    common_letter = lines[i].rstrip('\n')
+
+    for j in range(i-1,i-num,-1):
+        rucksack = lines[j].rstrip('\n')
+        common_letter = ''.join(set(rucksack).intersection(common_letter))
+
+    sum_of_priorities += convert_to_priority(common_letter)
+
+print("Sum of priorities pt2-improved: ", str(sum_of_priorities))
